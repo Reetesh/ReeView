@@ -1,0 +1,11 @@
+A tool that will analyze my tweets from a given year, find the most commonly used tags and then create stats for those.
+
+currently planned: 
+
+get twitter archive.
+create a db with tags and their frequencies.
+find a way to display the tweets in a page.
+
+future:
+
+eventually it will be a live feed of all stats with latest tweets and link to all tweets in the year so far.
