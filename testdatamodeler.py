@@ -1,7 +1,7 @@
 import unittest
 import os
-from datamodeler import DataModeler
 import pandas as pd
+from datamodeler import DataModeler
 
 DATA_FILE = "./data/reeview_test.csv"
 TWEET_ARCHIVE_DIR = "./data/test_archive"
@@ -9,12 +9,10 @@ TWEET_ARCHIVE_DIR = "./data/test_archive"
 class TestDataModeler( unittest.TestCase ):
 
     def setUp(self):
-
         if os.access( DATA_FILE, os.F_OK):
             os.remove(DATA_FILE)
 
     def test_write_tweets_to_csv( self ):
-
         df = pd.DataFrame(columns=('tweet_id', 'hashtag', 'created_at', 'user_id', 'tweet_text'))
         df.loc[123] = [ "test", "test", "test", "test", "test" ]
 
