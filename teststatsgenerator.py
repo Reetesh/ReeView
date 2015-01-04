@@ -25,6 +25,9 @@ class TestStatsGenerator( unittest.TestCase ):
         hashtags = self.stats_generator.top_hashtags()
         TestStatsGenerator.log.warning(hashtags)
         # no idea what to assert
+    def test_tag_breakdown( self ):
+        counts = self.stats_generator.tag_breakdown( "ReeMov", 2014, 12, "month" )
+        TestStatsGenerator.log.warning(counts)
 
 if __name__ == '__main__':
     unittest.main()
