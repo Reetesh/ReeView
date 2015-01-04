@@ -1,5 +1,5 @@
 
-function draw_bar_chart( json, year ) {
+function draw_bar_chart( json, x_axis, title_text ) {
 	$("#top-bar-container").highcharts({
 
 	chart: {
@@ -7,12 +7,12 @@ function draw_bar_chart( json, year ) {
 	},
 
 	title: {
-		text: "#ReeView of top #ReeTags from " + year
+		text: "#ReeView of " + title_text + " from " + x_axis
 	},
 
 	xAxis: {
 		categories: [
-			year
+			x_axis
 		]
 	},
 
@@ -21,6 +21,20 @@ function draw_bar_chart( json, year ) {
 			text: "Number of tweets"
 		}
 	},
+
+    plotOptions: {
+        series: {
+            cursor: 'pointer',
+            point: {
+                events: {
+                    click: function () {
+
+                        location.href =  '/tag/' + this.series.name;
+                    }
+                }
+            }
+        }
+    },
 	
 	series: json
 
